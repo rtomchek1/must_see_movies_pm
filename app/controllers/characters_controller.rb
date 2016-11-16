@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.all
+    @characters = Character.page(params[:page]).per(10)
 
     render("characters/index.html.erb")
   end
